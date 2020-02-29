@@ -9,7 +9,15 @@ defmodule Mphfish.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      dialyzer: [plt_add_deps: :transitive, remove_defaults: [:unknown]],
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -38,7 +46,10 @@ defmodule Mphfish.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:credo, "~> 1.2.2"},
+      {:dialyxir, "1.0.0-rc.7", only: [:dev], runtime: false},
+      {:mix_test_watch, "~> 1.0.2", only: :dev, runtime: false},
     ]
   end
 end
