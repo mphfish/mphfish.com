@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code&display=swap");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400, 700");
+
+html {
+  background-color: #1b262c;
+  color: #bbe1fa;
+  font-family: "Pt Sans", sans-serif;
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+a {
+  color: #3282b8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: #859900;
+}
+
+.logo {
+  color: #859900;
+  text-decoration: underline;
+  text-decoration-color: #3282b8 !important;
+  text-decoration-style: solid !important;
+  font-size: 4.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #859900;
+  font-family: "Fira Code", monospace;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  line-height: 2.7rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+  line-break: 1.7rem;
+}
+
+p {
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+}
+
+img {
+  margin: 8px;
+}
+
+.page-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 850px) {
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 32px;
+  }
+
+  .page-header h1 {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+}
+
+.page-header h1 {
+  padding-left: 16px;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  display: block;
+  padding: 2rem;
+  font-size: 2rem;
+  text-transform: lowercase;
+  font-family: "Fira Code", monospace;
+}
+nav a:hover {
+  text-decoration: none;
+  border-bottom: 10px solid #859900;
+}
+
+nav a.active {
+  border-bottom: 10px solid #859900;
+}
+
+@media screen and (max-width: 850px) {
+  nav a {
+    flex: 1;
+  }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-top: 16px;
+  padding: 0 16px;
+}
+
+main p {
+  margin-bottom: 16px;
+}
+
+main p:last-of-type {
+  margin-bottom: 0px;
+}
+
+footer {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+footer p {
+  font-size: 0.8rem;
+}

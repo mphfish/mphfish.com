@@ -1,0 +1,14 @@
+<header>
+</header>
+<main>
+  <img style="display:block;margin:16px auto;" src="https://media.giphy.com/media/hUEnpmgX9LyzZfK2xV/giphy.gif" />
+  <p>
+    I'm Mike.  I am a father/husband/programmer/sort of woodworker.
+    I am interesting in functional programming, the general craft of software development, and working remotely.
+    This is my blog where you'll primarily find things that I think are intriguing.
+    I am super jazzed about <a href="https://elixir-lang.org">Elixir</a>, but I also use <a href="https://reactjs.org">React</a> and Javascript daily.
+  </p>
+  <p>
+    This blog represents only my views.  It is <a href="https://github.com/mphfish/mphfish.com">open source</a>, and heavily inspired by <a href="https://www.theerlangelist.com/">Saša Jurić</a>'s blog.
+  </p>
+</main>
