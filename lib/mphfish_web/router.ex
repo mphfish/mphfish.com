@@ -15,6 +15,8 @@ defmodule MphfishWeb.Router do
 
   scope "/", MphfishWeb do
     pipe_through :browser
+    get "/", ArticleController, :all
+    get "/articles/:article_name", ArticleController, :article
     get "/privacy_policy", SiteController, :privacy_policy
     get "/about", SiteController, :about
   end

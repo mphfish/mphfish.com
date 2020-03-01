@@ -17,7 +17,8 @@ defmodule Mphfish.MixProject do
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test
-      ]
+      ],
+      source_url: "https://github.com/mphfish/mphfish.com"
     ]
   end
 
@@ -50,6 +51,9 @@ defmodule Mphfish.MixProject do
       {:credo, "~> 1.2.2"},
       {:dialyxir, "1.0.0-rc.7", only: [:dev], runtime: false},
       {:mix_test_watch, "~> 1.0.2", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.10", only: :test},
+      {:recase, "~> 0.3.0"},
+      {:earmark, "~> 1.4.3"}
     ]
   end
 end

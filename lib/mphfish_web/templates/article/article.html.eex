@@ -1,0 +1,16 @@
+<article class="article-single">
+  <header>
+    <a href="<%= @article.permalink %>">
+      <h2><%= @article.long_title %></h2>
+    </a>
+    <h4 class="article-meta"><%= @article.posted_at %></h4>
+  </header>
+  <main>
+    <%= {:safe, @article.html_content} %>
+  </main>
+  <footer>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">License</a></p>
+    <p><a href="<%= @article.permalink %>">Permalink</a></p>
+    <p><a href="<%= @article.source_link %>">Source Code</a>
+    </footer>
+  </article>

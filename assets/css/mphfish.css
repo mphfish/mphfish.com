@@ -150,6 +150,11 @@ main p:last-of-type {
   margin-bottom: 0px;
 }
 
+.article-meta {
+  font-size: 0.9rem;
+  text-align: right;
+}
+
 footer {
   margin: 0 auto;
   text-align: center;
