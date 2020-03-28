@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  web:
+    image: mphfish/mphfish.com:latest
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "4000:4000"

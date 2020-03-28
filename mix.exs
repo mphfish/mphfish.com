@@ -10,7 +10,11 @@ defmodule Mphfish.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      dialyzer: [plt_add_deps: :transitive, remove_defaults: [:unknown]],
+      dialyzer: [
+        plt_file: {:no_warn, "priv/plts/dialyzer.plt"},
+        plt_add_deps: :transitive,
+        remove_defaults: [:unknown]
+      ],
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
         coveralls: :test,
@@ -53,7 +57,8 @@ defmodule Mphfish.MixProject do
       {:mix_test_watch, "~> 1.0.2", only: :dev, runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
       {:recase, "~> 0.3.0"},
-      {:earmark, "~> 1.4.3"}
+      {:earmark, "~> 1.4.3"},
+      {:distillery, "~> 2.0"}
     ]
   end
 end
