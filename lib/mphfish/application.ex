@@ -13,6 +13,13 @@ defmodule Mphfish.Application do
   end
 
   case Mix.env() do
+    :prod ->
+      defp additional_children,
+        do: [
+          {Mphfish.ArticleRepo,
+           [[article_path: "#{Application.app_dir(:mphfish, "priv/articles")}/*.md"]]}
+        ]
+
     :test ->
       defp additional_children, do: []
 

@@ -8,3 +8,7 @@ config :mphfish, MphfishWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+config :junit_formatter,
+  report_file: "results.xml",
+  report_dir: "_test_results/exunit/"
