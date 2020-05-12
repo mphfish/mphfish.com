@@ -23,7 +23,7 @@
         </nav>
       </header>
       <main role="main">
-        <%= render @view_module, @view_template, assigns %>
+        <%= @inner_content %>
       </main>
       <footer>
         <p>Copyright <%= Date.utc_today().year %> Mike Fisher</p>

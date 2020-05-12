@@ -5,7 +5,8 @@ defmodule Mphfish.Application do
 
   def start(_type, _args) do
     children = [
-      MphfishWeb.Endpoint | additional_children()
+      MphfishWeb.Endpoint,
+      {Phoenix.PubSub, name: Mphfish.PubSub} | additional_children()
     ]
 
     opts = [strategy: :one_for_one, name: Mphfish.Supervisor]
