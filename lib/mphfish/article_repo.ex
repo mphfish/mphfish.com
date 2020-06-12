@@ -29,6 +29,7 @@ defmodule Mphfish.ArticleRepo do
     :articles
     |> :ets.tab2list()
     |> Enum.map(&elem(&1, 1))
+    |> Enum.sort(fn a, b -> a.posted_at > b.posted_at end)
   end
 
   @spec get(String.t()) :: Article.t() | nil
@@ -50,22 +51,18 @@ defmodule Mphfish.ArticleRepo do
   defp warm_cache(path_glob) do
     log("warming cache")
 
-    articles =
-      path_glob
-      |> Path.wildcard()
-      |> Enum.map(fn article_path ->
-        %Mphfish.Article{slug: slug} =
-          article =
-          article_path
-          |> File.read!()
-          |> Mphfish.Article.compile()
+    path_glob
+    |> Path.wildcard()
+    |> Enum.map(fn article_path ->
+      %Mphfish.Article{slug: slug} =
+        article =
+        article_path
+        |> File.read!()
+        |> Mphfish.Article.compile()
 
-        {slug, article}
-      end)
-
-    log("adding #{length(articles)} to cache")
-
-    :ets.insert(:articles, articles)
+      {slug, article}
+    end)
+    |> Enum.map(fn key_and_article -> :ets.insert(:articles, key_and_article) end)
   end
 
   defp generate_table do

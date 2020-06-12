@@ -1,6 +1,6 @@
 {
 "is_draft": false,
-"slug": "2020-02-29-hell0",
+"slug": "2020-05-23-partial-upsert-ecto",
 "long_title": "Partial Upserts in Ecto",
 "posted_at": "2020-05-23",
 "copyright_year": "2020",
